@@ -1,0 +1,20 @@
+#!/bin/bash
+# MOAB/Torque submission script for SciNet GPC (OpenMP)
+#
+#PBS -l nodes=1:ppn=8,walltime=5:00:00
+#PBS -N shocks4
+# load modutles (must match modules used for compilation)_
+module load intel/16.0.3
+# DIRECTORY TO RUN - $PBS_O_WORKDIR is directory job was submitted from
+cd $PBS_O_WORKDIR
+ 
+export OMP_NUM_THREADS=1024
+export OMP_STAKESIZE=20000M
+#./a.out
+#./ba
+./shocks4
+#./rad3d.x
+#./n512_256y_curl
+#./rad3d_256y.x
+#./rad3d_256x.x
+#./rad3d_1024_512y.x
